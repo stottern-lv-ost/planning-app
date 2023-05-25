@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Pages\TopicPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', TopicPage::class)->name('pages.topics.index');
