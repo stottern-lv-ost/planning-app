@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Pages\TopicPage;
+use App\Models\Topic;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use App\Http\Livewire\Pages\TopicPage;
 */
 
 Route::get('/', TopicPage::class)->name('pages.topics.index');
+Route::get('/{topic:slug}', function (Topic $topic) {
+    dd($topic);
+})->name('pages.topics.show');

@@ -27,7 +27,17 @@
 </head>
 
 <body class="font-sans antialiased">
-    {{ $slot }}
+
+    <!-- page header -->
+    <x-layouts.header />
+
+    <!-- Page cotent-->
+    <div class="container mx-auto p-6 my-4">
+        {{ $slot }}
+    </div>
+
+    <!-- Page footer -->
+    <x-layouts.footer />
 
     @stack('modals')
     @livewire('notifications')
