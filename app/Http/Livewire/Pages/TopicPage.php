@@ -36,7 +36,6 @@ class TopicPage extends Component implements HasTable
                     ->searchable()
                     ->color('secondary'),
             ]),
-
         ];
     }
 
@@ -45,6 +44,7 @@ class TopicPage extends Component implements HasTable
         return [
             'md' => 2,
             'xl' => 3,
+            '2xl' => 4,
         ];
     }
 
@@ -58,10 +58,9 @@ class TopicPage extends Component implements HasTable
     protected function getTableActions(): array
     {
         return [
-
             Tables\Actions\Action::make('show')
                 ->label('Show topic')
-                //->url(fn (Topic $record): string => $record) // route('posts.edit', $record)
+                ->url(fn (Topic $record): string => route('pages.topics.show', $record))
                 ->icon('heroicon-s-eye'),
         ];
     }
