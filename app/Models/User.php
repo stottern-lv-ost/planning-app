@@ -11,8 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 
-
-class User extends Authenticatable  implements FilamentUser
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens;
     use HasFactory;
