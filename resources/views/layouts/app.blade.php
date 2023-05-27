@@ -32,7 +32,7 @@
     <x-layouts.header />
 
     <!-- Page cotent-->
-    <div class="container mx-auto p-6 my-4">
+    <div class=" max-w-7xl container mx-auto p-6 my-4">
         {{ $slot }}
     </div>
 

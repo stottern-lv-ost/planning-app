@@ -1,5 +1,6 @@
-<header x-data="{ open: false }" @keydown.window.escape="open = false" class="bg-white border-b border-gray-200 shadow-sm">
-    <nav class="mx-auto flex container items-center justify-between p-6 lg:px-8" aria-label="Global">
+<header x-data="{ open: false }" @keydown.window.escape="open = false" class="bg-white border-b border-gray-200 shadow-sm"
+    role="banner">
+    <nav class="mx-auto flex max-w-7xl container items-center justify-between p-6 lg:px-8" aria-label="Global">
         <a href="#" class="-m-1.5 p-1">
             <span class="sr-only">{{ __('app.name') }}</span>
             <img class="h-12 w-auto" src="{{ asset('images/logo.png') }}" alt="">
@@ -16,12 +17,12 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#"
-                class="text-sm font-semibold leading-6 text-gray-900 hover:underline focus:underline">Topics</a>
+            <a href="{{ route('pages.topics.index') }}"
+                class="text-sm font-semibold leading-6 text-gray-900 hover:underline focus:underline">{{ __('app.navigation.topics') }}</a>
 
-            <a href="#"
-                class="text-sm font-semibold leading-6 text-gray-900 hover:underline focus:underline">Admin <span
-                    aria-hidden="true">→</span></a>
+            <a href="{{ route('filament.pages.dashboard') }}"
+                class="text-sm font-semibold leading-6 text-gray-900 hover:underline focus:underline">{{ __('app.navigation.admin') }}
+                <span aria-hidden="true">→</span></a>
         </div>
     </nav>
     <div class="lg:hidden" x-ref="dialog" x-show="open" aria-modal="true">
@@ -46,12 +47,12 @@
             <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
-                        <a href="#"
+                        <a href="{{ route('pages.topics.index') }}"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Topics</a>
                     </div>
 
                     <div class="py-6">
-                        <a href="#"
+                        <a href="{{ route('filament.pages.dashboard') }}"
                             class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Admin</a>
                     </div>
                 </div>

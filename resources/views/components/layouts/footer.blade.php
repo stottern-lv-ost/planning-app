@@ -1,6 +1,6 @@
-<footer class="bg-slate-700" aria-labelledby="footer-heading">
+<footer class="bg-slate-700" aria-labelledby="footer-heading" role="contentinfo">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="mx-auto max-w-7xl container px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
                 <img class="h-12" src="{{ asset('images/logo.png') }}" alt="{{ __('app.name') }}">
@@ -54,7 +54,7 @@
                 <!-- Column 1 / 2 -->
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
-                        <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                        <h3 class="text-sm font-semibold leading-6 text-white">TODO</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li>
                                 <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Todo</a>
@@ -64,7 +64,7 @@
                         </ul>
                     </div>
                     <div class="mt-10 md:mt-0">
-                        <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+                        <h3 class="text-sm font-semibold leading-6 text-white">TODO</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li>
                                 <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Todo</a>
@@ -75,6 +75,50 @@
                 </div>
 
                 <!-- Column 3 / 4 -->
+
+                <div class="md:grid md:grid-cols-2 md:gap-8">
+                    <div>
+                        <h3 class="text-sm font-semibold leading-6 text-white">
+                            {{ __('app.footer.columns.navigation.heading') }}
+                        </h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li>
+                                <a href="{{ route('pages.topics.index') }}"
+                                    class="text-sm leading-6 text-gray-300 hover:text-white">
+                                    {{ __('app.footer.columns.navigation.items.topics') }}
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('filament.pages.dashboard') }}"
+                                    class="text-sm leading-6 text-gray-300 hover:text-white">
+                                    {{ __('app.footer.columns.navigation.items.admin') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 md:mt-0">
+                        <h3 class="text-sm font-semibold leading-6 text-white">
+                            {{ __('app.footer.columns.legal.heading') }}
+                        </h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li>
+                                <a href="#" target="_blank"
+                                    class="text-sm leading-6 text-gray-300 hover:text-white">
+                                    {{ __('app.footer.columns.legal.items.imprint') }}
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank"
+                                    class="text-sm leading-6 text-gray-300 hover:text-white">
+                                    {{ __('app.footer.columns.legal.items.privacy') }}
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
 
             </div>
         </div>

@@ -23,4 +23,14 @@ class Topic extends Model
         'slug',
         'description',
     ];
+
+    public function previous(): ?Topic
+    {
+        return $this->where('id', $this->id - 1)->first();
+    }
+
+    public function next(): ?Topic
+    {
+        return $this->where('id', $this->id + 1)->first();
+    }
 }
