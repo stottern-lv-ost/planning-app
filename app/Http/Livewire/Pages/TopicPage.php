@@ -26,25 +26,31 @@ class TopicPage extends Component implements HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\Layout\Stack::make([
-                Tables\Columns\TextColumn::make('title')
-                    ->sortable()
-                    ->searchable()
-                    ->weight('bold'),
-                Tables\Columns\TextColumn::make('description')
-                    ->limit(150)
-                    ->searchable()
-                    ->color('secondary'),
-            ]),
+            // Tables\Columns\Layout\Stack::make([
+            //     Tables\Columns\TextColumn::make('title')
+            //         ->sortable()
+            //         ->searchable()
+            //         ->weight('bold'),
+            //     Tables\Columns\TextColumn::make('description')
+            //         ->limit(150)
+            //         ->searchable()
+            //         ->color('secondary'),
+            // ]),
+            Tables\Columns\Layout\View::make('topics.table.row-content')
+                ->components([
+                    Tables\Columns\TextColumn::make('title')
+                        ->searchable()
+                        ->weight('bold'),
+                ])
         ];
     }
 
     protected function getTableContentGrid(): ?array
     {
         return [
-            'md' => 2,
-            'xl' => 3,
-            '2xl' => 4,
+            'md' => 1,
+            'xl' => 2,
+            '2xl' => 3,
         ];
     }
 
@@ -61,7 +67,7 @@ class TopicPage extends Component implements HasTable
             Tables\Actions\Action::make('show')
                 ->label('Show topic')
                 ->url(fn (Topic $record): string => route('pages.topics.show', $record))
-                ->icon('heroicon-s-eye'),
+                ->icon('heroicon-s-eye')
         ];
     }
 
