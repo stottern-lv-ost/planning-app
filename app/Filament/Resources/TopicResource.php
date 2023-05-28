@@ -100,14 +100,17 @@ class TopicResource extends Resource
     {
         return [
             Tables\Columns\TextColumn::make('title')
+                ->label(_('filament.pages.topics.title'))
                 ->searchable()
                 ->sortable(),
 
             Tables\Columns\TextColumn::make('slug')
+                ->label(_('filament.pages.topics.slug'))
                 ->color('secondary')
                 ->toggleable(),
 
             Tables\Columns\TextColumn::make('description')
+                ->label(_('filament.pages.topics.description'))
                 ->limit(50)
                 ->searchable()
                 ->toggleable(isToggledHiddenByDefault: true)
@@ -123,20 +126,22 @@ class TopicResource extends Resource
                 ->schema(
                     [
                         Forms\Components\TextInput::make('title')
+                            ->label(__('filament.pages.topics.title'))
                             ->autofocus()
                             ->required()
-                            ->placeholder('Title')
+                            ->placeholder(__('filament.pages.topics.title'))
                             ->reactive()
                             ->afterStateUpdated(function (Closure $set, $state) {
                                 $set('slug', Str::slug($state));
                             }),
 
                         Forms\Components\TextInput::make('slug')
+                            ->label(__('filament.pages.topics.slug'))
                             ->autofocus()
                             ->placeholder('Slug'),
 
                         Forms\Components\RichEditor::make('description')
-                            ->placeholder('Description')
+                            ->label(__('filament.pages.topics.description'))
                             ->disableToolbarButtons([
                                 'attachFiles',
                                 'codeBlock',

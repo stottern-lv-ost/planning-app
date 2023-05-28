@@ -15,17 +15,17 @@
 
     <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <div class="px-4 py-6 sm:px-6">
-            <h3 class="text-base font-semibold leading-7 text-gray-900">Applicant Information</h3>
-            <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
+            <h3 class="text-base font-semibold leading-7 text-gray-900">{{ __('app.pages.topics.details.heading') }}</h3>
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">{{ __('app.pages.topics.details.subheading') }}</p>
         </div>
         <div class="border-t border-gray-100">
             <dl class="divide-y divide-gray-100">
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-900">Topic</dt>
+                    <dt class="text-sm font-medium text-gray-900">{{ __('app.pages.topics.details.topic') }}</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"> {{ $topic->title }}</dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-900">Tags</dt>
+                    <dt class="text-sm font-medium text-gray-900">{{ __('app.pages.topics.details.tags') }}</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 space-x-2">
                         <span
                             class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Badge</span>
@@ -33,13 +33,14 @@
                 </div>
 
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-900">Description</dt>
+                    <dt class="text-sm font-medium text-gray-900">{{ __('app.pages.topics.details.description') }}</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                         {{ $topic->description }}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
+                    <dt class="text-sm font-medium leading-6 text-gray-900">
+                        {{ __('app.pages.topics.details.materials') }}</dt>
                     <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                         <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
                             <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">

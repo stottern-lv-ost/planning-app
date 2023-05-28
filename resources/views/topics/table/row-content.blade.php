@@ -15,7 +15,7 @@
             </div>
         </header>
 
-        <p class="text-gray-700">
+        <p class="text-gray-700 line-clamp-3">
             {{ $getRecord()->description }}
         </p>
     </div>
