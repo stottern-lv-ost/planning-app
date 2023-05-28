@@ -1,4 +1,4 @@
-<section class="py-2 rounded-lg flex flex-col flex-1 h-44">
+<section class="py-3 rounded-lg flex flex-col flex-1 h-auto md:h-40">
     <div class="h-full">
 
         <header class="flex justify-between">
@@ -14,7 +14,6 @@
                     class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Badge</span>
             </div>
         </header>
-
 
         <p class="text-gray-700">
             {{ $getRecord()->description }}

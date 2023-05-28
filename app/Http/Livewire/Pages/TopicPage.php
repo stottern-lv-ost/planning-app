@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Pages;
 
-use App\Models\Topic;
+use Closure;
 use Filament\Tables;
-use Filament\Tables\Concerns\InteractsWithTable;
-use Filament\Tables\Contracts\HasTable;
+use App\Models\Topic;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
+use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Concerns\InteractsWithTable;
 
 class TopicPage extends Component implements HasTable
 {
@@ -61,13 +62,18 @@ class TopicPage extends Component implements HasTable
         ];
     }
 
+    protected function getTableRecordUrlUsing(): ?Closure
+    {
+        return fn (Topic $record): string => route('pages.topics.show', $record);
+    }
+
     protected function getTableActions(): array
     {
         return [
-            Tables\Actions\Action::make('show')
-                ->label('Show topic')
-                ->url(fn (Topic $record): string => route('pages.topics.show', $record))
-                ->icon('heroicon-s-eye')
+            // Tables\Actions\Action::make('show')
+            //     ->label('Show topic')
+            //     ->url(fn (Topic $record): string => route('pages.topics.show', $record))
+            //     ->icon('heroicon-s-eye')
         ];
     }
 
